@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="OverAll">
+        <div class="container">
+            <div class="header">
+                <img src="https://cdn0.iconfinder.com/data/icons/user-interface-2063/24/UI_Essential_icon_expanded_2-94-512.png"
+                    alt="" style="width: 40px; height: 40px;">
+                <h1>Your To Do List</h1>
+            </div>
+            <div class="input-area">
+                <input type="text" id="taskInput" placeholder="เพิ่มรายการใหม่...">
+                <button onclick="addTask()">เพิ่ม</button>
+            </div>
+
+            <ul id="taskList">
+            </ul>
+        </div>
+        <div>
+            <P>📖 How to Use</P>
+            <P>Type a task and press Enter or click Add.</P>
+            <P>Click a task to mark it as completed.    
+            <P>Tasks are automatically saved in LocalStorage.</P>
+            <P>Delete a task by clicking the ✖ button.</P>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script src="script1.js"></script>
+</body>
+
+</html>
