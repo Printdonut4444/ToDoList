@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style copy.css">
+</head>
+
+<body>
+    <div class="OverAll" id="app">
+        <div class="container">
+            <div class="container1">
+                <div class="header">
+                    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-2063/24/UI_Essential_icon_expanded_2-94-512.png"
+                        alt="" style="width: 40px; height: 40px;">
+                    <h1>Your To Do List</h1>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="taskInput" placeholder="เพิ่มรายการใหม่...">
+                    <button onclick="addTask()">เพิ่ม</button>
+                </div>
+
+                <ul id="taskList">
+                </ul>
+            </div>
+            <div class="container2">
+                <div class="buttonGroup">
+                    <div class="side-shortcut" id="sideShortcut">
+                        <div class="shortcut-switch">
+                            <span class="shortcut-title" id="shortcutTitle">OPEN✨</span>
+                            <span class="shortcut-name" id="quicks" style="display:none;">Quicks</span>
+                        </div>
+                    </div>
+                    <div class="todo-footer-box" >
+                        <ul class="todo-func-list filter"  id="filterList" style="display: none;">
+                            <li>
+                                <input class="btn-small action-showAll selected" type="button" value="All"
+                                    data-filter="all">
+                            </li>
+
+                            <li>
+                                <input class="btn-small action-progress" type="button" value="In Progress"
+                                    data-filter="ongoing">
+                            </li>
+
+                            <li>
+                                <input class="btn-small action-completed" type="button" value="Completed"
+                                    data-filter="completed">
+                            </li>
+
+                            <li>
+                                <input class="btn-small action-deleted" type="button" value="Trash"
+                                    data-filter="removed">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <P>📖 How to Use</P>
+                <P>Type a task and press Enter or click Add.</P>
+                <P>Click a task to mark it as completed.
+                <P>Tasks are automatically saved in LocalStorage.</P>
+                <P>Delete a task by clicking the ✖ button.</P>
+            </div>
+        </div>
+        <!-- <script src="script.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+        <script src="script1.js"></script>
+        <script>
+            const sideShortcut = document.getElementById('sideShortcut');
+            const shortcutTitle = document.getElementById('shortcutTitle');
+            const filterList = document.getElementById('filterList');
+
+            let isShow = false; // เริ่มต้น
+            let shortCut = 'OPEN✨';
+
+            shortcutTitle.textContent = shortCut;
+
+            sideShortcut.addEventListener('click', function () {
+                isShow = !isShow;
+
+                if (isShow) {
+                    shortCut = '＝';
+                    // sideShortcut.classList.add('fold');
+                    document.getElementById('quicks').style.display = 'inline';
+                    filterList.style.display = 'none';
+                } else {
+                    shortCut = 'OPEN✨';
+                    // sideShortcut.classList.remove('fold');
+                    document.getElementById('quicks').style.display = 'none';
+                    filterList.style.display = 'block';
+                }
+
+                shortcutTitle.textContent = shortCut;
+            });
+
+        </script>
+</body>
+
+</html>
